@@ -1,0 +1,33 @@
+body {
+    background: rgb(80, 80, 250);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.354);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+select#sel {
+    width: 4.7cm;
+    height: 2.5cm;
+}
+
+input#num {
+    width: 50px;
+}

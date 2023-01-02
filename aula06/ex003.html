@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu primeiro trabalho</title>
+  <style>
+body {background-color: white;}
+h1 {color: black; font-size: 20pt; font-style: oblique;}
+ p {color: black;font-size: 15pt; font-style: italic;}
+ </style>
+</head>
+<body>
+  <h1>Ola mundo!</h1>
+  <p>Já me livrei da maldição</p>
+  <script>
+    var n1 = Number(window.prompt('Digite um numero')) // transforma string em number
+    var n2 = Number(window.prompt('Digite outro numero')) // String ou n.toString transforma number em string
+    var s = n1 + n2
+    window.alert(`A soma entre ${n1} e ${n2} é igual a ${s}`)
+    var n3 = 1346.60
+    document.write(`${n3}`)
+    n3.toLocaleString('pt-BR' , {style: 'currency' , currency: 'BRL'}) // coloca o número em forma monetária
+  </script>
+</body>
+</html>

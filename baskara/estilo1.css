@@ -1,0 +1,48 @@
+body {
+    background: rgb(4, 4, 61);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.354);
+}
+
+footer {
+    color: rgb(252, 251, 251);
+    text-align: center;
+    font-style: italic;
+}
+
+input#ba {
+    width: 40px;
+}
+
+input#bb {
+    width: 40px;
+}
+
+input#bc {
+    width: 40px;
+}
+
+div#del {
+    margin-top: 10px;
+}
+
+div#text {
+    text-align: center;
+}
+
+img#img {
+    margin-left: 150px;
+}

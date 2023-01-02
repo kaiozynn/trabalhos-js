@@ -1,0 +1,55 @@
+body {
+    background: rgb(42, 42, 114);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 590px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.354);
+    background-image: url('formulario.jpg');
+    background-position: 'center';
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+h2 {
+    margin-top: -7px;
+    text-align: center;
+}
+
+input#name {
+    width: 70px;
+}
+
+select#sel {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: auto;
+}
+
+input#dia, input#mes  {
+    width: 40px;
+}
+input#ano {
+    width: 50px;
+}
+
+input#pro {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}

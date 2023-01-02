@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="estilo1.css">
+</head>
+<body>
+    <header>
+        <h1>Formulário de Vagas de Emprego</h1>
+    </header>
+    <section>
+        <div>
+        <h2>Preencha os Dados</h2>
+        <p>Nome:
+            <input type="text" name="name" id="name">
+            <label>Sobrenome:</label> <input type="text" name="sob" id="sob">
+        </p>
+        <p id="nas">Data de nascimento:
+            <input type="number" name="dia" id="dia" placeholder="Dia" min="1" max="31">
+            <input type="number" name="mes" id="mes" placeholder="Mês" min="1" max="12">
+            <input type="number" name="ano" id="ano" placeholder="Ano">
+        </p>
+        <p>Email:
+            <input type="text" name="ema" id="ema">
+        </p>
+        <p>CPF:
+            <input type="text" name="cpf" id="cpf" autocomplete="off" maxlength="14">
+        </p>
+        <p>Gênero:
+            <label>Maculino</label><input type="radio" name="rd" id="mas">
+            <label>Feminino</label><input type="radio" name="rd" id="fem">
+            <label>Outros</label><input type="radio" name="rd" id="out">
+            <br><input type="button" value="Proximo" id="pro">
+        </p>
+        <select name="sel" id="sel" size="2">
+                <option>Perfis aqui</option>
+            </select>
+        </div>
+        <div id="res">
+            
+            
+        </div>
+    </section>
+    <footer>
+        <p>&copy;CaioTreino</p>
+    </footer>
+    <script src="script1.js"></script>
+    
+</body>
+</html>

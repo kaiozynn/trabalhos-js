@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino</title>
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <h1>Formatando números</h1>
+    <input type="number" name="txtn" id="txtn"> + 
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="somar" onclick="somar()">
+    <div id="res"></div>
+   
+   <script>
+    function somar() {
+var txtn = document.getElementById('txtn')
+var txtn2 = document.getElementById('txtn2')
+var n1 = Number(txtn.value)
+var n2 = Number(txtn2.value)
+var res = document.getElementById('res')
+var s = n1 + n2
+        res.innerHTML = `A soma de ${n1} + ${n2} é igual a ${s}`
+    }
+    </script>
+</body>
+</html>

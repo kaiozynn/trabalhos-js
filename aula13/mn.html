@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hétero ou Não</h1>
+    <p>Qual seu gênero 
+    <br>    <label>Homem</label> <input type="radio" name="ra" id="hm1">
+    <label>Mulher</label> <input type="radio" name="ra" id="ml1">
+    </p>
+
+    Qual sua atração?
+    <p> <label>Homem</label> <input type="radio" name="rd" id="hm">
+        <label>Mulher</label> <input type="radio" name="rd" id="ml">
+    <br><input type="button" value="Verificar" id="vel">
+    </p>
+    
+    <div id="res"></div>
+    <script>
+        var vel = document.querySelector('#vel')
+        vel.addEventListener('click',  function enviar(){
+    
+        let ge = document.getElementsByName('ra')
+        let at = document.getElementsByName('rd')
+        let tr = document.querySelector('#res')
+
+        if (ge[0].checked && at[0].checked){ // situações possíveis 1°'homem + homem'
+            at = 'homem'
+            tr.innerHTML = `Você é gay pq gosta de ${at}`
+        } else if (ge[1].checked && at[1].checked) { // 2° mulher + mulher 
+            at = 'mulher'
+            res.innerHTML = `Você é sapatão pq gosta de ${at}`
+        } else if (ge[0].checked && at[1].checked) { // 3° homem + mulher
+            at = 'mulher'
+            res.innerHTML = `Você é hétero pq gosta de ${at}`
+        } else { // 4° mulher + homem
+            at = 'homem'
+            res.innerHTML = `Você é hétero pq gosta de ${at}`
+        }
+
+        
+        
+        
+     
+
+    } 
+)
+    </script>
+</body>
+</html>
