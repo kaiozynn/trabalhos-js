@@ -1,0 +1,86 @@
+body {
+    background: rgb(42, 41, 41);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 800px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.354);
+    background-image: url("asta3.jpg");
+    background-position: center;
+    color: rgb(255, 253, 253);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+div {
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  input[type="number"] {
+    width: 100px;
+  }
+  
+  input + span {
+    padding-right: 30px;
+  }
+  
+  input:invalid + span::after {
+    position: absolute;
+    content: "✖";
+    padding-left: 5px;
+    color: #fb0505;
+  }
+  
+  input:valid + span::after {
+    position: absolute;
+    content: "✓";
+    padding-left: 5px;
+    color: #03f703;
+  }
+
+  input#nome {
+    width: 200px;
+  }
+
+  div#tit {
+    text-align: center;
+  }
+
+  input#ema {
+    width: 200px;
+  }
+
+  input#tel {
+    width:100px;
+  }
+
+  input#tele {
+    width: 23px;
+  }
+
+  div#per {
+    text-align: center;
+  }
+
+  input#envi {
+    text-align: center;
+  }
+
+  div#anim {
+    text-align: center;
+  }

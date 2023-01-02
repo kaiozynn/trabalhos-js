@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino de Formulario</title>
+    <link rel="stylesheet" href="estilo1.css">
+</head>
+<body>
+    <header>
+        <h1>Treino de Fomulario</h1>
+    </header>
+    <section>
+        <form action="1form"><div id="tit">
+        Preencha os Dados
+        </div>
+        <div>
+        <p>Nome Completo:
+            <input type="text" name="nome" id="nome" required>
+        </p>
+        <p>Data de Nascimento:
+            <input type="date" name="data" id="data">
+        </p>
+        <p>Gênero:
+            <input type="radio" name="radgen" id="mas">
+            <label for="mas">Masculino</label>
+            <input type="radio" name="radgen" id="fem">
+            <label for="fem">Feminino</label>
+            <input type="radio" name="radgen" id="out">
+            <label for="out">Outros</label>
+        </p>
+        <p><label for="emai">E-mail:</label>
+            <input type="email" name="ema" id="ema"
+            placeholder="1234567890@gmail.com"
+            size="40"
+            minlength="20"
+            maxlength="60">
+        </p>
+        <p><label for="tele">Telefone:</label>
+            <input type="tel" name="tele" id="tele"
+            placeholder="(xx)">
+            <input type="tel" name="tel" id="tel" 
+            required
+            size="20"
+            minlength="15"
+            maxlength="18"
+            placeholder="xxxxx-xxxx">
+            <span class="validity"></span>
+        </p>
+        <p>
+                <label for="sit">Situação atual de emprego:</label>
+                <input type="radio" name="sit" id="em">
+                <label for="emp">Empregado</label>
+                <input type="radio" name="sit" id="de">
+                <label for="des">Desempregado</label>
+        </p>
+        <p>Você gosta de algum anime?
+                <input type="radio" name="ani" id="sim">
+                <label for="yes">Sim!</label>
+                <input type="radio" name="ani" id="não">
+                <label for="no">Não</label>
+        </p>
+        </div>
+
+        <div id="per"> Seu perfil:
+            <p id="res"></p>
+            <p id="anim"></p>
+            <p><input type="button" value="Enviar" id="envi"></p>
+        </div>
+        
+    </form>
+    </section>
+    <footer>
+        <p>&copy; CaioProjetos</p>
+    </footer>
+    <script src="script1.js"></script>
+    
+</body>
+</html>
