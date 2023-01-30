@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="hiden(this, true); debug('hide button 1');">Hide1</button>
+    <button onclick="hiden(this, false); debug('hide button 2');">Hide2</button>
+    <script>
+        function moveon() {
+            var answer = confirm("Ready to move on?")
+
+            if (answer) {
+                window.location = "https://google.com"
+            }
+        }
+
+        function debug(msg) {
+            var log = document.getElementById('debuglog')
+
+            if (!log) {
+                log = document.createElement('div')
+                log.id = 'debuglog'
+
+                log.innerHTML = '<table><tr><td>ola<td/></tr></table>'
+                document.body.appendChild(log)
+
+                var pre = document.createElement('pre')
+                var text = document.createTextNode(msg)
+                pre.appendChild(text)
+                log.appendChild(pre)
+            }
+        }
+
+        function hiden(e, reflow) {
+            if(reflow) {
+                e.style.display = 'none'
+            } else {
+                e.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
