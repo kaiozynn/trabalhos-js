@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Empréstimo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .res1, .res2, .res3 {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Calcule seu Empréstimo aqui</h1>
+        <form action="calcular emprestimo">
+            <label><strong>Insira os Dados do Empréstimo</strong></label>
+            <br><label>Valor do Empréstimo:</label> <input type="number" name="loan" id="loan" min="0" placeholder="0">
+            <br><label>porcentagem do Juros (%):</label> <input type="number" name="juros" id="juros" placeholder="0" min="1" max="100">
+            <br><label>Juros:</label>
+            <input type="radio" name="periodo" id="dia"><label>Diario</label>
+            <input type="radio" name="periodo" id="mes"><label>Mensal</label>
+            <input type="radio" name="periodo" id="ano"><label>Anual</label>
+            <br><label>Quantidade do Período:</label> <input type="number" name="qtaPeriodo" id="qtaPeriodo">
+            <br><label>CEP (para encontrar credores):</label><input type="number" name="cep" id="cep">
+            <br><label><strong>Pagamentos aproximados:</strong></label> <input type="button" value="Calcular">
+            <br><label>Varlor da Parcela</label> <div class="res1"></div>
+            <br><label>Total a pagar</label> <div class="res2"></div>
+            <br><label>Total do Juros</label> <div class="res3"></div>
+            <div>
+                <p>
+                    <strong>Patrocinadores:</strong>
+                    solicite seu empréstimo com um desses credores
+                </p>
+                <ul>
+                    <li><a href="#">Banco de JavaScript</a></li>
+                    <li><a href="#">União de crédito HTML</a></li>
+                </ul>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
