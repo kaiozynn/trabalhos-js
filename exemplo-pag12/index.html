@@ -9,10 +9,72 @@
         * {
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
+            text-align: justify;
+            font-size: 3vh;
+        }
+        main {
+            min-width: 350px;
+            max-width: 800px;
+            margin: auto;
         }
 
-        .res1, .res2, .res3 {
+        h1 {
+            font-size: 1.5em;
+        }
+
+        input[type='number'] {
+            width: 150px;
+        }
+
+        #loan {
+            margin-left: 166px;
+        }
+
+        #juros {
+            margin-left: 103px;
+        }
+
+        #qtaPeriodo {
+            margin-left: 140px;
+        }
+
+        #cep {
+            margin-left: 63px;
+        }
+
+        #calcular {
+            margin-left: 118px;
+            font-size: 2vh;
+        }
+
+        #res1, #res2, #res3 {
             display: inline;
+            font-weight: bolder;
+        }
+
+        #res1 {
+            padding-left: 200px;
+        }
+
+        #res2 {
+            padding-left: 246px;
+        }
+
+        #res3 {
+            padding-left: 234px;
+        }
+
+        input {
+            margin: 10px 0px 10px 3px;
+        }
+
+        label {
+            margin:  0px 0px 0px 5px;
+        }
+
+        .valor {
+            display: inline-block;
+            padding: 10px 0px 10px 0px;
         }
     </style>
 </head>
@@ -28,11 +90,11 @@
             <input type="radio" name="periodo" id="mes"><label>Mensal</label>
             <input type="radio" name="periodo" id="ano"><label>Anual</label>
             <br><label>Quantidade do Período:</label> <input type="number" name="qtaPeriodo" id="qtaPeriodo">
-            <br><label>CEP (para encontrar credores):</label><input type="number" name="cep" id="cep">
-            <br><label><strong>Pagamentos aproximados:</strong></label> <input type="button" value="Calcular">
-            <br><label>Varlor da Parcela</label> <div class="res1"></div>
-            <br><label>Total a pagar</label> <div class="res2"></div>
-            <br><label>Total do Juros</label> <div class="res3"></div>
+            <br><label>CEP (para encontrar credores):</label><input type="number" name="cep" id="cep" autocomplete="off">
+            <br><label><strong>Pagamentos aproximados:</strong></label> <input type="button" value="Calcular" id="calcular">
+            <br><label class="valor">Varlor da Parcela</label> <div id="res1"></div>
+            <br><label class="valor">Total a pagar</label> <div id="res2"></div>
+            <br><label class="valor">Total do Juros</label> <div id="res3"></div>
             <div>
                 <p>
                     <strong>Patrocinadores:</strong>
