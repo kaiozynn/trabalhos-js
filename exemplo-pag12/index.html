@@ -85,16 +85,12 @@
             <label><strong>Insira os Dados do Empréstimo</strong></label>
             <br><label>Valor do Empréstimo:</label> <input type="number" name="loan" id="loan" min="0" placeholder="0">
             <br><label>porcentagem do Juros (%):</label> <input type="number" name="juros" id="juros" placeholder="0" min="1" max="100">
-            <br><label>Juros:</label>
-            <input type="radio" name="periodo" id="dia"><label>Diario</label>
-            <input type="radio" name="periodo" id="mes"><label>Mensal</label>
-            <input type="radio" name="periodo" id="ano"><label>Anual</label>
-            <br><label>Quantidade do Período:</label> <input type="number" name="qtaPeriodo" id="qtaPeriodo">
-            <br><label>CEP (para encontrar credores):</label><input type="number" name="cep" id="cep" autocomplete="off">
+            <br><label id="nomePeriodo">Quantidade do Período:</label> <input type="number" name="qtaPeriodo" id="qtaPeriodo" placeholder="0">
+            <br><label>CEP (para encontrar credores):</label><input type="number" name="cep" id="cep" autocomplete="off" placeholder="0">
             <br><label><strong>Pagamentos aproximados:</strong></label> <input type="button" value="Calcular" id="calcular">
-            <br><label class="valor">Varlor da Parcela</label> <div id="res1"></div>
-            <br><label class="valor">Total a pagar</label> <div id="res2"></div>
-            <br><label class="valor">Total do Juros</label> <div id="res3"></div>
+            <br><label class="valor">Varlor da Parcela</label> <div id="res1"><span id="span1"></span></div>
+            <br><label class="valor">Total a pagar</label> <div id="res2"><span id="span2"></span></div>
+            <br><label class="valor">Total do Juros</label> <div id="res3"><span id="span3"></span></div>
             <div>
                 <p>
                     <strong>Patrocinadores:</strong>
@@ -107,5 +103,6 @@
             </div>
         </form>
     </main>
+    <script src="emprestimo.js"></script>
 </body>
 </html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+
+        .output {
+            font-weight: bold;
+        }
+
+        #payment {
+            text-decoration: underline;
+        }
+
+        #graph {
+            border: solid 1px black;
+        }
+
+        td {
+            height: 55px;
+        }
+
+        th, td {
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Enter Loan Data:</th>
+            <td></td>
+            <th>Loan Balance, Comulative Equity, and Interest Payments</th>
+        </tr>
+        <tr>
+            <td>Valor do Empréstimo($):</td>
+            <td><input id="amount" onchange="calculate()"></td>
+            <td rowspan="8">
+                <canvas id="graph" width="400" height="250"></canvas>
+            </td>
+        </tr>
+        <tr>
+            <td>Porcentagem do Juros (%):</td>
+            <td><input id="apr" onchange="calculate()"></td>
+        </tr>
+        <tr>
+            <td>Quantidade periodo (anos):</td>
+            <td><input id="years" onchange="calculate()"></td>
+        </tr>
+        <tr>
+            <td>CEP (para encontrar credores):</td>
+            <td><input id="zipcode" onchange="calculate()"></td>
+        </tr>
+        <tr>
+            <th>Pagamentos Aproximados:</th>
+            <td><button onclick="calculate()">Calculate</button></td>
+        </tr>
+        <tr>
+            <td>Valor da Parcela:</td>
+            <td>$<span class="output" id="payment"></span></td>
+        </tr>
+        <tr>
+            <td>Total a Pagar:</td>
+            <td>$<span class="output" id="total"></span></td>
+        </tr>
+        <tr>
+            <td>Total de Juros:</td>
+            <td>$<span class="output" id="totalInterest"></span></td>
+        </tr>
+        <tr>
+            <th>Sponsors:</th>
+            <td colspan="2">
+                Apply for your loan with one of these fine lenders:
+                <div id="lenders"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    function calculate() {
+        var emprestimo = document.querySelector('#amount')
+        var juros = document.querySelector('#apr')
+        var anos = document.querySelector('#years')
+        var cep = document.querySelector('#zipcode')
+        var parcela = document.querySelector('#payment')
+        var total = document.querySelector('#total')
+        var totalJuros = document.querySelector('#totalInterest')
+
+        var principal = Number(emprestimo.value)
+        var interest = Number(juros.value) / 100 / 12
+        var pagamento = Number(anos.value) * 12
+
+        var x = Math.pow(1 + interest, pagamento)
+        var mes = (principal*x*interest) / (x-1)
+
+        if (isFinite(mes)) {
+            parcela.innerHTML = mes.toFixed(2)
+            total.innerHTML = (mes * pagamento).toFixed(2)
+            totalJuros.innerHTML = ((mes * pagamento) - principal).toFixed(2)
+
+            save(emprestimo.value, juros.value, anos.value, cep.value)
+
+            try {
+                getLenders(emprestimo.value, juros.value, anos.value, cep.value)
+            }
+
+            catch(e) {}
+
+            chart(principal, interest, mes, pagamento)
+
+        } else {
+            parcela.innerHTML = ''
+            total.innerHTML = ''
+            totalJuros.innerHTML = ''
+            
+            chart()
+        }
+    }
+
+    function save(emprestimo, juros, anos, cep) {
+        if (window.localStorage) {
+            localStorage.loan_emprestimo = emprestimo
+            localStorage.loan_juros = juros
+            localStorage.loan_anos = anos
+            localStorage.loan_cep = cep
+        }
+    }
+
+    window.onload = function() {
+        if(window.localStorage && localStorage.loan_emprestimo) {
+            document.querySelector('#amount').value = localStorage.loan_emprestimo
+            document.querySelector("#apr").value = localStorage.loan_juros
+            document.querySelector('#years').value = localStorage.loan_anos
+            document.querySelector('#zipcode').value = localStorage.loan_cep
+        }
+    }
+
+    function getLenders(emprestimo, juros, anos, cep) {
+        if (!window.XMLHttpRequest) {return}
+
+        var ad = document.querySelector('#lenders')
+
+        if (!ad) {return}
+
+        var url = "getLenders.php" + "?amt=" + encodeURIComponent(emprestimo) + '&apr=' + encodeURIComponent(juros) + '?yrs=' + encodeURIComponent(anos) + '?zip=' + encodeURIComponent(cep)
+
+        var req = new XMLHttpRequest()
+        req.open('GET', url)
+        req.sed(null)
+
+        req.onreadystatechange = function() {
+            if(req.readyState == 4 && req.status == 200 ) {
+                var response = req.responseText
+                var lenders = JSON.parse(response)
+            }
+
+            var list = ''
+            for(var i = 0; 1 < lenders.length; i++) {
+                list += "<li><a href='" + lenders[i].url + "'>" + lenders[i].name + "</a>"
+                //list += `<li><a href="" ${lenders[i].url}> ${lenders[i].name}</a>`
+            }
+
+            ad.innerHTML = `<ul> ${list} <ul>`
+        }
+    }
+
+    function chart(principal, interest, mes, pagamento) {
+        var graph = document.querySelector("#graph")
+        graph.width = graph.width
+
+        if(argumentos.length == 0 || !graph.getContext) {
+            return
+        }
+    }
+</script>
+</html>
